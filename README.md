@@ -1,3 +1,11 @@
+#Ballour
+
+##Target-platform
+- Mobile devices
+
+##Controls
+- Mobile device acceletometer controls the player ball
+
 ##Rules
 - You must destroy all the destroyable bricks in the level;
 - You start with 1 of health;
