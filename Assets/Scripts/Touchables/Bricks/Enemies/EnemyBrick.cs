@@ -71,7 +71,7 @@ public class EnemyBrick : Brick
         DestroyObject();
     }
 
-    protected override Color SortRandomColor()
+    protected override Color32 SortRandomColor()
     {
         return Utils.SortRandomColorFromColors(Utils.enemyBrickColors);
     }

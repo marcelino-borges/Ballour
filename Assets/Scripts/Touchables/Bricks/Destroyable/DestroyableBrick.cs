@@ -10,6 +10,8 @@ public class DestroyableBrick : Brick
 
     public ShakePreset shakePreset;
 
+    public bool isDestroyed = false;
+
     protected override void Awake()
     {
         base.Awake();
@@ -59,7 +61,7 @@ public class DestroyableBrick : Brick
     }
 
     public void HandleDamage(int damage)
-    {
+    {        
         if (DecreaseHitPoints(damage) <= 0)
         {
             if (destroySfx != null)
@@ -75,11 +77,11 @@ public class DestroyableBrick : Brick
     }
 
     public int DecreaseHitPoints(int amount)
-    {        
-        return hitPoints--;
+    {
+        return --hitPoints;
     }
 
-    protected override Color SortRandomColor()
+    protected override Color32 SortRandomColor()
     {
         return Utils.SortRandomColorFromColors(Utils.destroyableBrickColors);
     }

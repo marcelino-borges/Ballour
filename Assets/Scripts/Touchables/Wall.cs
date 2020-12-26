@@ -26,7 +26,8 @@ public class Wall : Touchable
         player.SetColor(currentColor);
         if (touchSfx != null)
             SoundManager.instance.PlaySound2D(touchSfx);
-        float xVel = Mathf.Abs(player.rbd2.velocity.x);
+        
+        /*float xVel = Mathf.Abs(player.rbd2.velocity.x);
         float yVel = Mathf.Abs(player.rbd2.velocity.y);
 
         if (xVel > yVel)
@@ -35,7 +36,7 @@ public class Wall : Touchable
         } else if (yVel > xVel)
         {
             player.rbd2.velocity = new Vector2(-1 * player.rbd2.velocity.x, player.rbd2.velocity.y) * 3;
-        }
+        }*/
 
     }
 }

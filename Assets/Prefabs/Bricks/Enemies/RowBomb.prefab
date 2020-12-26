@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7289861543407883044}
+  - component: {fileID: 215131791300795602}
   - component: {fileID: 7289861543407883046}
   - component: {fileID: 7276050607927111079}
-  - component: {fileID: 215131791300795602}
   m_Layer: 0
   m_Name: RowBomb
   m_TagString: Untagged
@@ -29,10 +29,38 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1, y: 2.68, z: 0.06633282}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 378601692148829586}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &215131791300795602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7289861543407883032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d116bdb088f1b459d4133e27766e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColor: {r: 0.8980393, g: 0.1137255, b: 0.1137255, a: 1}
+  currentColor: {r: 0.8980393, g: 0.1137255, b: 0.1137255, a: 1}
+  renderer: {fileID: 7289861543407883046}
+  touchSfx: {fileID: 8300000, guid: 543e20e1465021e4cb108b0eb449b546, type: 3}
+  destroySfx: {fileID: 8300000, guid: 969099a603d13084aa1726aa45670449, type: 3}
+  isRandomColor: 0
+  explosionParticlesPrefab: {fileID: 9186946151706584043, guid: 4bec4efea7b7ab94781fd305e87bc7cd,
+    type: 3}
+  canDamage: 1
+  damage: 1
+  shakePreset: {fileID: 11400000, guid: b6c564645c0eebb45a5e0ab942f12a28, type: 2}
+  damageArea: {x: 4, y: 0.5}
+  whatIsDestroyableBrick:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!212 &7289861543407883046
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -109,30 +137,78 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &215131791300795602
-MonoBehaviour:
+--- !u!1001 &6845727353632596521
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7289861543407883032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57d116bdb088f1b459d4133e27766e0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startColor: {r: 0.8980393, g: 0.1137255, b: 0.1137255, a: 1}
-  currentColor: {r: 0.8980393, g: 0.1137255, b: 0.1137255, a: 1}
-  renderer: {fileID: 7289861543407883046}
-  touchSfx: {fileID: 8300000, guid: 543e20e1465021e4cb108b0eb449b546, type: 3}
-  destroySfx: {fileID: 8300000, guid: 969099a603d13084aa1726aa45670449, type: 3}
-  isRandomColor: 0
-  explosionParticlesPrefab: {fileID: 9186946151706584043, guid: 4bec4efea7b7ab94781fd305e87bc7cd,
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7289861543407883044}
+    m_Modifications:
+    - target: {fileID: 2349627596077008408, guid: 156c7ac1bfaee9e4492baac90b42c81c,
+        type: 3}
+      propertyPath: m_Name
+      value: SquareExplosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503753088142585787, guid: 156c7ac1bfaee9e4492baac90b42c81c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503753088142585787, guid: 156c7ac1bfaee9e4492baac90b42c81c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503753088142585787, guid: 156c7ac1bfaee9e4492baac90b42c81c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503753088142585787, guid: 156c7ac1bfaee9e4492baac90b42c81c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503753088142585787, guid: 156c7ac1bfaee9e4492baac90b42c81c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503753088142585787, guid: 156c7ac1bfaee9e4492baac90b42c81c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503753088142585787, guid: 156c7ac1bfaee9e4492baac90b42c81c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503753088142585787, guid: 156c7ac1bfaee9e4492baac90b42c81c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503753088142585787, guid: 156c7ac1bfaee9e4492baac90b42c81c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503753088142585787, guid: 156c7ac1bfaee9e4492baac90b42c81c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503753088142585787, guid: 156c7ac1bfaee9e4492baac90b42c81c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 156c7ac1bfaee9e4492baac90b42c81c, type: 3}
+--- !u!4 &378601692148829586 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6503753088142585787, guid: 156c7ac1bfaee9e4492baac90b42c81c,
     type: 3}
-  canDamage: 1
-  damage: 1
-  shakePreset: {fileID: 11400000, guid: b6c564645c0eebb45a5e0ab942f12a28, type: 2}
-  damageArea: {x: 4, y: 0.5}
-  whatIsDestroyableBrick:
-    serializedVersion: 2
-    m_Bits: 256
+  m_PrefabInstance: {fileID: 6845727353632596521}
+  m_PrefabAsset: {fileID: 0}

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public abstract class Brick : Touchable
 {
@@ -21,5 +19,5 @@ public abstract class Brick : Touchable
         base.FixedUpdate();
     }
 
-    protected abstract Color SortRandomColor();
+    protected abstract Color32 SortRandomColor();
 }

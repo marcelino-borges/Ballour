@@ -49,10 +49,12 @@ MonoBehaviour:
   currentColor: {r: 0.19215688, g: 0.8078432, b: 0.83921576, a: 1}
   renderer: {fileID: 8971998165962505923}
   touchSfx: {fileID: 8300000, guid: 543e20e1465021e4cb108b0eb449b546, type: 3}
+  destroySfx: {fileID: 8300000, guid: 543e20e1465021e4cb108b0eb449b546, type: 3}
   isRandomColor: 0
   explosionParticlesPrefab: {fileID: 9186946151706584043, guid: 4bec4efea7b7ab94781fd305e87bc7cd,
     type: 3}
-  point: 1
+  score: 1
+  hitPoints: 1
   shakePreset: {fileID: 11400000, guid: b9078288329f1ed45adf85770a55eb0c, type: 2}
 --- !u!212 &8971998165962505923
 SpriteRenderer:
