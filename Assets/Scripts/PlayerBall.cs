@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
 public class PlayerBall : MonoBehaviour
@@ -13,12 +10,14 @@ public class PlayerBall : MonoBehaviour
     public float moveSpeed = 3f;
     public bool isOneHitDead = true;
     public bool isDead = false;
+    public int collectables;
+    public float verticalMultiplier = 2f;
 
     public Color startColor;
     public Color currentColor;
-    public SpriteRenderer renderer;
+    public SpriteRenderer spriteRenderer;
     public TrailRenderer trail;
-    public Light2D light;
+    public Light2D light2D;
 
     [HideInInspector]
     public Rigidbody2D rbd2;
@@ -40,7 +39,7 @@ public class PlayerBall : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 acc = Input.acceleration;
-        acc = Quaternion.Euler(80, 0, 0) * acc;
+        acc = Quaternion.Euler(70, 0, 0) * acc;
 
         if(rbd2.velocity.magnitude < 0.2f)
         {
@@ -52,7 +51,7 @@ public class PlayerBall : MonoBehaviour
                 trail.gameObject.SetActive(true);
         }
 
-        rbd2.AddForce(acc * moveSpeed);
+        rbd2.AddForce(new Vector3(acc.x, (acc.y * verticalMultiplier), acc.z) * moveSpeed);
     }
 
     public void SetHealth(int newHealth)
@@ -64,25 +63,34 @@ public class PlayerBall : MonoBehaviour
     public void SetColor(Color newColor)
     {
         currentColor = newColor;
-        renderer.color = newColor;
+        spriteRenderer.color = newColor;
         trail.startColor = newColor;
         trail.endColor = newColor;
-        if (light != null)
-            light.color = newColor;
+        if (light2D != null)
+            light2D.color = newColor;
     }
 
     public int TakeDamage(int damage)
     {
-        if (isOneHitDead && !isDead)
-        {
-            Die();
-            canTakeDamage = false;
-            return 0;
-        }
-
         if (canTakeDamage)
         {
+            HUD.instance.BlinkDamagePanel();
+
+            if (isOneHitDead && !isDead)
+            {
+                SetHealth(0);
+                Die();
+                canTakeDamage = false;
+                return currentHealth;
+            }
+
             SetHealth(currentHealth - damage);
+
+            if(currentHealth <= 0)
+            {
+                currentHealth = 0;
+                Die();            
+            }
         }
 
         return currentHealth;
@@ -90,7 +98,6 @@ public class PlayerBall : MonoBehaviour
 
     public void Die()
     {
-        SetHealth(0);
         isDead = true;
         LevelManager.instance.SetGameOver();
     }
@@ -100,6 +107,12 @@ public class PlayerBall : MonoBehaviour
         score += amount;
         HUD.instance.SetScore(score);
         return score;
+    }
+
+    public int GatherCollectable(int amount)
+    {
+        collectables++;
+        return collectables;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -48,7 +48,7 @@ MonoBehaviour:
   nextMusic: {fileID: 0}
   animator: {fileID: 0}
   musicTransitionDuration: 2
-  currentVolume: 0
+  currentVolume: 0.15
   maxVolume: 0.15
   isMuted: 0
   fadingIn: 0

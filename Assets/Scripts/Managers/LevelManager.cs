@@ -1,32 +1,35 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
 
     public GameObject gameOverPanel;
-    public GameObject victoryPanel;
+    public VictoryMenu victoryMenu;
     public PlayerBall player;
     public bool isGameOver = false;
 
-    public int totalObjectivesInLevel = 0;
+    public int initialObjectivesInLevel = 0;
+    public int totalObjectivesToDestroyInLevel = 0;
     public int objectivesDestroyed = 0;
+
+    public int collectablesInLevel = 0;
+
     public float delayToShowUI = .5f;
+
+    public int starsWonInLevel = 0;
 
     void Start()
     {
         if (instance == null)
             instance = this;
 
-        totalObjectivesInLevel = GameObject.FindObjectsOfType<DestroyableBrick>().Length;
+        initialObjectivesInLevel = GameObject.FindObjectsOfType<DestroyableBrick>().Length;
+        totalObjectivesToDestroyInLevel = initialObjectivesInLevel;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBall>();
-    }
-
-    void Update()
-    {
-        
+        collectablesInLevel = GameObject.FindGameObjectsWithTag("Collectable").Length;
     }
 
     public void SetGameOver()
@@ -44,14 +47,29 @@ public class LevelManager : MonoBehaviour
 
     public void SetVictory()
     {
+        starsWonInLevel = CalculateStarsWon(objectivesDestroyed, initialObjectivesInLevel);
         StartCoroutine(SetVictoryCo());
+    }
+
+    private int CalculateStarsWon(int objectivesDestroyed, int initialObjectivesInLevel)
+    {
+        int stars = 3;
+        if (objectivesDestroyed < initialObjectivesInLevel)
+            stars--;
+
+        if (collectablesInLevel > 0 && player.collectables < collectablesInLevel)
+            stars--;
+
+        return stars;
     }
 
     private IEnumerator SetVictoryCo()
     {
         player.FreezePlayer();
         yield return new WaitForSeconds(delayToShowUI);
-        ShowUI(victoryPanel);
+        ShowUI(victoryMenu.gameObject);
+        victoryMenu.SetStarsFromLevel();
+        SaveLevelData();
     }
 
     private void ShowUI(GameObject ui)
@@ -63,7 +81,18 @@ public class LevelManager : MonoBehaviour
     {
         objectivesDestroyed++;
 
-        if (objectivesDestroyed >= totalObjectivesInLevel)
+        if (objectivesDestroyed >= totalObjectivesToDestroyInLevel)
             SetVictory();
+    }
+
+    public void SaveLevelData()
+    {
+        LevelData currentLevel = new LevelData(SceneManager.GetActiveScene().buildIndex, starsWonInLevel);
+        PlayerPersistence.TryToSaveCurrentLevel(currentLevel);
+    }
+
+    public void DecreaseTotalObjectivesToDestroy(int amount)
+    {
+        totalObjectivesToDestroyInLevel--;
     }
 }

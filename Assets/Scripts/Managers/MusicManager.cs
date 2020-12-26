@@ -13,8 +13,12 @@ public class MusicManager : MonoBehaviour
     //public AudioClip nextMusic2;
     [HideInInspector]
     public Animator animator;
-    public float musicTransitionDuration = 2f, currentVolume, maxVolume = .15f;
+    public float musicTransitionDuration = 2f;
 
+    private float currentVolume;
+    public float CurrentVolume { get => isMuted ? 0 : currentVolume; set => currentVolume = value; }
+
+    public float maxVolume = .15f;
     public bool isMuted = false;
     public bool fadingIn, fadingOut;
     private bool changeMusic;
@@ -33,11 +37,13 @@ public class MusicManager : MonoBehaviour
 
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+
+        //audioSource.mute = isMuted;
     }
 
     private void Start()
     {
-
+        audioSource.volume = CurrentVolume;
     }
 
     private void Update()

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -9,26 +10,45 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI scoreText;
     public PlayerBall player;
+    public GameObject pausePanel;
+    public GameObject damagePanel;
+
+    private void Awake()
+    { 
+        instance = this;
+    }
 
     private void Start()
     {
-        if (instance == null)
-            instance = this;
-
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBall>();
     }
 
     public void SetHealth(int health)
     {
-        print("SetHealth");
         healthText.text = health < 10 ? "0" + health : health.ToString();
     }
 
     public void SetScore(int score)
     {
-        print("SetScore");
         scoreText.text = score < 10 ? "0" + score : score.ToString();
     }
 
+    public void ShowPauseMenu()
+    {
+        if (pausePanel != null)
+            pausePanel.SetActive(true);
+    }
+
+    public void BlinkDamagePanel()
+    {
+        StartCoroutine(BlinkDamagePanelCo());
+    }
+
+    private IEnumerator BlinkDamagePanelCo()
+    {
+        damagePanel.SetActive(true);
+        yield return new WaitForSeconds(.1f);
+        damagePanel.SetActive(false);
+    }
 }

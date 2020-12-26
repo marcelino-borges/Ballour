@@ -55,17 +55,12 @@ MonoBehaviour:
   moveSpeed: 20
   isOneHitDead: 1
   isDead: 0
+  collectables: 0
   startColor: {r: 1, g: 1, b: 1, a: 1}
   currentColor: {r: 1, g: 1, b: 1, a: 1}
-  renderer: {fileID: 185853332432464830}
+  spriteRenderer: {fileID: 185853332432464830}
   trail: {fileID: 185853333595845552}
-  light: {fileID: 5275054506251200961}
-  onEarnPointEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  onTakeDamageEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  light2D: {fileID: 5275054506251200961}
   rbd2: {fileID: 0}
 --- !u!212 &185853332432464830
 SpriteRenderer:

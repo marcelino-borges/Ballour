@@ -1,16 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PointBomb : EnemyBrick, IBomb
+﻿public class PointBomb : Bomb
 {
-    [SerializeField]
-    private Vector2 damageArea;
-    public Vector2 DamageArea { get => damageArea; set => damageArea = value; }
-
-    [SerializeField]
-    private LayerMask whatIsDestroyableBrick;
-    public LayerMask WhatIsDestroyableBrick { get => whatIsDestroyableBrick; set => whatIsDestroyableBrick = value; }
 
     protected override void Awake()
     {
@@ -35,13 +24,7 @@ public class PointBomb : EnemyBrick, IBomb
         base.FixedUpdate();
     }
 
-    public void Explode()
-    {
-        CastDamageOnArea();
-        DestroyObject();
-    }
-
-    public void CastDamageOnArea()
+    public override void CastDamageOnArea()
     {
         
     }
