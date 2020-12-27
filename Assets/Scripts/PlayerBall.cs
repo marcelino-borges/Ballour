@@ -22,6 +22,8 @@ public class PlayerBall : MonoBehaviour
     [HideInInspector]
     public Rigidbody2D rbd2;
 
+    public int coins;
+
     private void Awake()
     {
         rbd2 = GetComponent<Rigidbody2D>();
@@ -38,20 +40,28 @@ public class PlayerBall : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 acc = Input.acceleration;
-        acc = Quaternion.Euler(70, 0, 0) * acc;
+        Vector3 acc = GetAccelerometerDirection();
 
-        if(rbd2.velocity.magnitude < 0.2f)
+        rbd2.AddForce(new Vector3(acc.x, (acc.y * verticalMultiplier), acc.z) * moveSpeed);
+
+        if (rbd2.velocity.magnitude < 0.2f)
         {
             if (trail.gameObject.activeSelf)
                 trail.gameObject.SetActive(false);
-        } else
+        }
+        else
         {
             if (!trail.gameObject.activeSelf)
                 trail.gameObject.SetActive(true);
         }
+    }
 
-        rbd2.AddForce(new Vector3(acc.x, (acc.y * verticalMultiplier), acc.z) * moveSpeed);
+    private static Vector3 GetAccelerometerDirection()
+    {
+        Vector3 acc = Input.acceleration;
+        acc = Quaternion.Euler(70, 0, 0) * acc;
+        acc = Vector3.Normalize(acc);
+        return acc;
     }
 
     public void SetHealth(int newHealth)
