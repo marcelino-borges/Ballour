@@ -8,7 +8,9 @@ public class LevelDataUI : MonoBehaviour
     public int buildIndex;
     public TextMeshProUGUI levelNameTxt;
     public GameObject[] stars;
+    [HideInInspector]
     public Button button;
+    public GameObject padlockImage;
 
     public static int latestLevelPersisted = 0;
 
@@ -25,31 +27,47 @@ public class LevelDataUI : MonoBehaviour
 
         if(playerData != null)
         {
-            LevelData level = PlayerPersistence.GetLevelPersisted(buildIndex);
+            LevelData levelFound = PlayerPersistence.GetLevelPersisted(buildIndex);
 
-            if(level != null)
+            if(levelFound != null)
             {
-                for (int i = 0; i < level.stars; i++)
+                SetStars(levelFound.stars);
+
+                MakeInteractable(true);
+            }
+            else
+            {
+                if (playerData.levelsPlayed != null)
                 {
-                    stars[i].SetActive(true);
+                    if (buildIndex == playerData.levelsPlayed.Count + 1)
+                        MakeInteractable(true);
                 }
-
-                button.interactable = true;
-            } else
-            {
-                if (buildIndex <= LevelSelectionUI.instance.latestLevelPlayed + 1)
-                    button.interactable = true;
                 else
-                    button.interactable = false;
+                {
+                    if (buildIndex == 1)
+                        MakeInteractable(true);
+                }
             }
         }
+    }
 
-        if (buildIndex == 1 && !button.interactable)
-            button.interactable = true;
+    private void SetStars(int starsInLevel)
+    {
+        for (int i = 0; i < starsInLevel; i++)
+        {
+            stars[i].SetActive(true);
+        }
     }
 
     public void LoadLevel()
     {
         SceneManager.LoadScene(buildIndex);    
+    }
+
+    public void MakeInteractable(bool interactable)
+    {
+        button.interactable = interactable;
+        levelNameTxt.gameObject.SetActive(interactable);
+        padlockImage.SetActive(!interactable);
     }
 }

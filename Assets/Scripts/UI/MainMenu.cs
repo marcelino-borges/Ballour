@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
@@ -10,6 +8,7 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         CheckFirstTimePlaying();
+        SetMuteIconVisible(MusicManager.instance.isMuted);
     }
 
     public void Play()
@@ -33,7 +32,6 @@ public class MainMenu : MonoBehaviour
 
     private void CheckFirstTimePlaying()
     {
-        print("MainMenu.CheckFirstTimePlaying()");
         PlayerPersistence.LoadPlayerData();
     }
 }

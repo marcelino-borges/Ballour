@@ -15,6 +15,11 @@ public class LevelSelectionUI : MonoBehaviour
         latestLevelPlayed = PlayerPersistence.GetIndexOfLastLevelPlayed();
     }
 
+    private void Start()
+    {
+        PlayerPersistence.LoadPlayerData();
+    }
+
     public void LoadMainMenu()
     {
         CommonUI.LoadMainMenu();

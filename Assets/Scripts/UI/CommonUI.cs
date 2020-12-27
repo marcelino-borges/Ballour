@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CommonUI : MonoBehaviour
@@ -14,7 +12,7 @@ public class CommonUI : MonoBehaviour
     public static void LoadMainMenu()
     {
         SoundManager.instance.PlayButtonSfx();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public static void ReloadLevel()

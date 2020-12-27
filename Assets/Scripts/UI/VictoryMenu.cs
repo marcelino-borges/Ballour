@@ -7,6 +7,8 @@ public class VictoryMenu : MonoBehaviour
     public float delayBetweenEachStarActivation = 1f;
     public AudioClip victorySfx;
 
+    public GameObject WatchAdPopUp;
+
     private bool hasShownStars = false;
 
     public void SetStarsFromLevel()
@@ -33,8 +35,11 @@ public class VictoryMenu : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        if(hasShownStars)
+        if (hasShownStars)
+        {
             CommonUI.LoadNextLevel();
+            UnityAds.instance.ShowVideo();
+        }
     }
     public void LoadMainMenu()
     {

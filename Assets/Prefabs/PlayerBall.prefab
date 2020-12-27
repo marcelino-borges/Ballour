@@ -56,12 +56,14 @@ MonoBehaviour:
   isOneHitDead: 1
   isDead: 0
   collectables: 0
+  verticalMultiplier: 2
   startColor: {r: 1, g: 1, b: 1, a: 1}
   currentColor: {r: 1, g: 1, b: 1, a: 1}
   spriteRenderer: {fileID: 185853332432464830}
   trail: {fileID: 185853333595845552}
   light2D: {fileID: 5275054506251200961}
   rbd2: {fileID: 0}
+  coins: 0
 --- !u!212 &185853332432464830
 SpriteRenderer:
   m_ObjectHideFlags: 0

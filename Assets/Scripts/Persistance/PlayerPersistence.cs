@@ -195,6 +195,7 @@ public class PlayerPersistenceData
 {
     public string playerName;
     public int score;
+    public int coins;
     
     [SerializeField]
     public List<LevelData> levelsPlayed;
@@ -205,6 +206,7 @@ public class PlayerPersistenceData
     public void SetPlayerData(PlayerBall player)
     {
         this.score = player.score;
+        this.coins = player.coins;
     }
 }
 
@@ -248,8 +250,6 @@ public class PlayerOptionsConfig
     //public Language language;
     public float sfxVolume, musicVolume;
     public int graphicQuality, aliasing;
-    [SerializeField]
-    public GameResolution resolution;
     public bool fullscreen;
 
     public PlayerOptionsConfig()
@@ -257,19 +257,6 @@ public class PlayerOptionsConfig
         //resolution = new int[2];
         //language = Language.Null;
     }
-}
-
-[Serializable]
-public class GameResolution
-{
-    public int width, height;
-
-    public GameResolution(Resolution resolution)
-    {
-        this.width = resolution.width;
-        this.height = resolution.height;
-    }
-
 }
 
 
