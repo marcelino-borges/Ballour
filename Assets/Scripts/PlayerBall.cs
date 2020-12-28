@@ -139,6 +139,11 @@ public class PlayerBall : MonoBehaviour
         rbd2.simulated = false;
     }
 
+    public void UnfreezePlayer()
+    {
+        rbd2.simulated = true;
+    }
+
     public int IncreaseHealth(int amount)
     {
         SetHealth(currentHealth + amount);

@@ -7,31 +7,23 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        CheckFirstTimePlaying();
         SetMuteIconVisible(MusicManager.instance.isMuted);
     }
 
     public void Play()
     {
+        CommonUI.PlayButtonClickSfx();
         SceneManager.LoadScene("LevelSelection");
     }
 
-    public void Mute()
+    public void LoadSettingsMenu()
     {
-        bool mute = MusicManager.instance.isMuted;
-        
-        MusicManager.instance.Mute(!mute);
-        SoundManager.instance.Mute(!mute);
-        SetMuteIconVisible(!mute);
+        CommonUI.PlayButtonClickSfx();
+        CommonUI.LoadSettingsMenu();
     }
 
     public void SetMuteIconVisible(bool visible)
     {
         soundButton.SetMuteIconVisible(visible);
-    }
-
-    private void CheckFirstTimePlaying()
-    {
-        PlayerPersistence.LoadPlayerData();
     }
 }

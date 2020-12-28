@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9069799807819095561}
   - component: {fileID: 337099040855053569}
+  - component: {fileID: 6208766524039120949}
   - component: {fileID: 705827735247228212}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -45,6 +46,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582778732810589815}
   m_CullTransparentMesh: 0
+--- !u!114 &6208766524039120949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582778732810589815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4aa984d545e7284da368fc460b38e8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  concatenateType: 0
+  localisedString:
+    key: earn_more_coins_popup_title
 --- !u!114 &705827735247228212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +220,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611185327497703154}
   m_CullTransparentMesh: 0
+--- !u!114 &1228722229987105381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2283701234451301369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4aa984d545e7284da368fc460b38e8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  concatenateType: 0
+  localisedString:
+    key: button_watch_ad
 --- !u!1 &5722944845869630087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,6 +1203,12 @@ PrefabInstance:
 --- !u!224 &4328548635057279084 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6038196194162613060, guid: 2a32839633ec87e43a114f371e949d76,
+    type: 3}
+  m_PrefabInstance: {fileID: 8059723141359520552}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2283701234451301369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8099923297781516497, guid: 2a32839633ec87e43a114f371e949d76,
     type: 3}
   m_PrefabInstance: {fileID: 8059723141359520552}
   m_PrefabAsset: {fileID: 0}

@@ -215,6 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5762845053105435553}
   - component: {fileID: 353192928703494940}
+  - component: {fileID: 3651473306198059891}
   - component: {fileID: 2519933430527952086}
   m_Layer: 5
   m_Name: Watch_Text
@@ -250,6 +251,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8099923297781516497}
   m_CullTransparentMesh: 0
+--- !u!114 &3651473306198059891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8099923297781516497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4aa984d545e7284da368fc460b38e8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  concatenateType: 0
+  localisedString:
+    key: button_watch_ad
 --- !u!114 &2519933430527952086
 MonoBehaviour:
   m_ObjectHideFlags: 0

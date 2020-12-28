@@ -9,18 +9,16 @@ public class SoundManager : MonoBehaviour
     private float currentVolume = 1f;
     public float CurrentVolume { get => isMuted ? 0 : currentVolume; set => currentVolume = value; }
 
+    public float maxVolume = 1f;
+
     public AudioClip buttonClickSfx;
     public bool isMuted = false;
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-
         audioSource.mute = isMuted;
-    }
 
-    void Start()
-    {
         if (instance == null)
         {
             instance = this;
@@ -30,6 +28,10 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void Start()
+    {
     }
 
     public void PlaySound2D(AudioClip audio)
