@@ -15,7 +15,7 @@ public class MusicManager : MonoBehaviour
     public Animator animator;
     public float musicTransitionDuration = 2f;
 
-    private float currentVolume;
+    public float currentVolume = .15f;
     public float CurrentVolume { get => isMuted ? 0 : currentVolume; set => currentVolume = value; }
 
     public float maxVolume = .15f;
@@ -37,8 +37,6 @@ public class MusicManager : MonoBehaviour
 
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-
-        //audioSource.mute = isMuted;
     }
 
     private void Start()

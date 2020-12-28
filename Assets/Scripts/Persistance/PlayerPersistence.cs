@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using UnityEditor;
 using UnityEngine;
 
 public class PlayerPersistence : MonoBehaviour
@@ -29,8 +28,8 @@ public class PlayerPersistence : MonoBehaviour
             playerDataToSave.playerOptionsConfig = new PlayerOptionsConfig();
         }
 
-        //if (saveLanguage)
-        //    playerDataToSave.playerOptionsConfig.language = LocalisationSystem.language;
+        if (saveLanguage)
+            playerDataToSave.playerOptionsConfig.language = LocalisationSystem.language;
 
         BinaryFormatter binaryFormatter = new BinaryFormatter();
         FileStream file = File.Create(FILE_PATH);
@@ -70,7 +69,7 @@ public class PlayerPersistence : MonoBehaviour
         return File.Exists(FILE_PATH);
     }
 
-    /*public static Language GetPlayerLanguage()
+    public static Language GetPlayerLanguage()
     {
         if (HasFileCreated())
         {
@@ -79,11 +78,8 @@ public class PlayerPersistence : MonoBehaviour
             {
                 foreach (Language languageType in EnumUtil.GetValues<Language>())
                 {
-                    if (languageType == playerData.playerOptionsConfig.language)
-                    {
-
-                        return languageType;
-                    }
+                    if (languageType == playerData.playerOptionsConfig.language)                    
+                        return languageType;                    
                 }
             }
         }
@@ -95,13 +91,11 @@ public class PlayerPersistence : MonoBehaviour
         PlayerPersistenceData playerData = LoadPlayerData();
 
         if (playerData.playerOptionsConfig == null)
-        {
             playerData.playerOptionsConfig = new PlayerOptionsConfig();
-        }
 
         playerData.playerOptionsConfig.language = LocalisationSystem.language;
         SavePlayerData(playerData, true);
-    }*/
+    }
 
     public static int GetIndexOfLastLevelPlayed()
     {
@@ -109,9 +103,7 @@ public class PlayerPersistence : MonoBehaviour
         {
             PlayerPersistenceData playerData = LoadPlayerData();
             if (playerData.levelsPlayed != null && playerData.levelsPlayed.Count > 0)
-            {
                 return playerData.levelsPlayed[playerData.levelsPlayed.Count - 1].buildIndex;
-            }
         }
         return 1;
     }
@@ -129,10 +121,9 @@ public class PlayerPersistence : MonoBehaviour
 
                 if (!playerData.levelsPlayed.Contains(level))
                     playerData.levelsPlayed.Add(level);
-                else
-                {
+                else                
                     playerData.levelsPlayed[playerData.levelsPlayed.IndexOf(level)] = level;
-                }
+
                 SavePlayerData(playerData);
             }
         }
@@ -246,16 +237,13 @@ public class LevelData
 [Serializable]
 public class PlayerOptionsConfig
 {
-    //[SerializeField]
-    //public Language language;
+    [SerializeField]
+    public Language language;
     public float sfxVolume, musicVolume;
-    public int graphicQuality, aliasing;
-    public bool fullscreen;
 
     public PlayerOptionsConfig()
     {
-        //resolution = new int[2];
-        //language = Language.Null;
+        language = Language.Null;
     }
 }
 

@@ -20,4 +20,15 @@ public class CommonUI : MonoBehaviour
         SoundManager.instance.PlayButtonSfx();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public static void LoadSettingsMenu()
+    {
+        SoundManager.instance.PlayButtonSfx();
+        SceneManager.LoadScene("SettingsMenu");
+    }
+
+    public static void PlayButtonClickSfx()
+    {
+        SoundManager.instance.PlayButtonSfx();
+    }
 }

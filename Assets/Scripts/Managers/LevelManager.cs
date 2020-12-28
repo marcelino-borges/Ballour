@@ -14,21 +14,26 @@ public class LevelManager : MonoBehaviour
     public int initialObjectivesInLevel = 0;
     public int totalObjectivesToDestroyInLevel = 0;
     public int objectivesDestroyed = 0;
-
     public int collectablesInLevel = 0;
-
     public float delayToShowUI = .5f;
-
     public int starsWonInLevel = 0;
+    public GameObject tipCanvas;
 
-    void Start()
+    private void Awake()
     {
         if (instance == null)
             instance = this;
 
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBall>();
+    }
+
+    void Start()
+    {
+        if (tipCanvas != null) 
+            tipCanvas.SetActive(true);
+
         initialObjectivesInLevel = GameObject.FindObjectsOfType<DestroyableBrick>().Length;
         totalObjectivesToDestroyInLevel = initialObjectivesInLevel;
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBall>();
         collectablesInLevel = GameObject.FindGameObjectsWithTag("Collectable").Length;
     }
 
