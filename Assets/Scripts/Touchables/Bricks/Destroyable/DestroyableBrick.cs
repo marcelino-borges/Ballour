@@ -21,8 +21,8 @@ public class DestroyableBrick : Brick
     {
         base.Start();
 
-        if (isRandomColor)
-            SetColor(SortRandomColor());
+        /*if (isRandomColor)
+            SetColor(SortRandomColor());*/
     }
 
     protected override void Update()
@@ -43,7 +43,7 @@ public class DestroyableBrick : Brick
             ParticleSystem.MainModule explosion = Instantiate(explosionParticlesPrefab, transform.position, Quaternion.identity)
                 .GetComponent<ParticleSystem>().main;
 
-            explosion.startColor = currentColor;
+            //explosion.startColor = currentColor;
         }
         LevelManager.instance.CountDestroyedObjective();
         Destroy(gameObject);

@@ -5,7 +5,7 @@ using UnityEngine;
 public interface IBomb
 {
     Vector2 DamageArea { get; set; }
-    LayerMask WhatIsDestroyableBrick { get; set; }
+    LayerMask WhatIsTarget { get; set; }
 
     void Explode();
     void CastDamageOnArea();

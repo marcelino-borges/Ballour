@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 
 public class Bomb : EnemyBrick, IBomb
 {
@@ -7,8 +9,11 @@ public class Bomb : EnemyBrick, IBomb
     public Vector2 DamageArea { get => damageArea; set => damageArea = value; }
 
     [SerializeField]
-    protected LayerMask whatIsDestroyableBrick;
-    public LayerMask WhatIsDestroyableBrick { get => whatIsDestroyableBrick; set => whatIsDestroyableBrick = value; }
+    protected LayerMask whatIsTarget;
+    public LayerMask WhatIsTarget { get => whatIsTarget; set => whatIsTarget = value; }
+
+    public bool destroyOtherBombs = false;
+    public bool destroyBricks = true;
 
     protected override void Awake()
     {
@@ -47,20 +52,36 @@ public class Bomb : EnemyBrick, IBomb
         {
             foreach (Collider2D col in colliders)
             {
-                DestroyableBrick destroyable = col.gameObject.GetComponent<DestroyableBrick>();
-                if (!destroyable.isDestroyed)
+                MonoBehaviour monoBehaviour = col.gameObject.GetComponent<MonoBehaviour>();
+                if (destroyBricks && monoBehaviour is DestroyableBrick)
                 {
-                    destroyable.isDestroyed = true;
-                    LevelManager.instance.DecreaseTotalObjectivesToDestroy(1);
-                    Destroy(destroyable.gameObject);
+                    DestroyableBrick destroyable = col.gameObject.GetComponent<DestroyableBrick>();
+                    if (!destroyable.isDestroyed)
+                    {
+                        destroyable.isDestroyed = true;
+                        LevelManager.instance.DecreaseTotalObjectivesToDestroy(1);
+                        Destroy(destroyable.gameObject);
+                    }
+                }
+
+                if(destroyOtherBombs && monoBehaviour is Bomb)
+                {
+                    Bomb bomb = monoBehaviour.gameObject.GetComponent<Bomb>();
+                    bomb.StartCoroutine(bomb.ExecuteDelayed(.1f, bomb.Explode));               
                 }
             }
         }
     }
 
+    public IEnumerator ExecuteDelayed(float delay, Action action)
+    {
+        yield return new WaitForSeconds(delay);
+        action();
+    }
+
     protected virtual Collider2D[] RaycastArea()
     {
-        return Physics2D.OverlapBoxAll(transform.position, damageArea, 0f, WhatIsDestroyableBrick);        
+        return Physics2D.OverlapBoxAll(transform.position, damageArea, 0f, whatIsTarget);        
     }
 
     public override void OnTouchPlayer(PlayerBall player)

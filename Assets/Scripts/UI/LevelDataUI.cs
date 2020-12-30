@@ -11,6 +11,11 @@ public class LevelDataUI : MonoBehaviour
     [HideInInspector]
     public Button button;
     public GameObject padlockImage;
+    public Sprite cookieNew;
+    public Sprite cookieBite;
+
+    public Image image;
+
 
     public static int latestLevelPersisted = 0;
 
@@ -29,9 +34,13 @@ public class LevelDataUI : MonoBehaviour
         {
             LevelData levelFound = PlayerPersistence.GetLevelPersisted(buildIndex);
 
-            if(levelFound != null)
+            if (levelFound != null)
             {
-                SetStars(levelFound.stars);
+                int stars = levelFound.stars;
+
+                image.sprite = cookieBite;
+
+                SetStars(stars);
 
                 MakeInteractable(true);
             }
@@ -68,6 +77,6 @@ public class LevelDataUI : MonoBehaviour
     {
         button.interactable = interactable;
         levelNameTxt.gameObject.SetActive(interactable);
-        padlockImage.SetActive(!interactable);
+        padlockImage.SetActive(!interactable);        
     }
 }

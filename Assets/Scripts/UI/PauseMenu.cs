@@ -21,4 +21,10 @@ public class PauseMenu : MonoBehaviour
     {
         CommonUI.LoadMainMenu();
     }
+
+    public void ClosePauseMenu()
+    {
+        CommonUI.PlayButtonClickSfx();
+        gameObject.SetActive(false);
+    }
 }

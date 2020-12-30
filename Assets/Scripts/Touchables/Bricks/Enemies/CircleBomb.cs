@@ -24,7 +24,7 @@ public class CircleBomb : Bomb
 
     protected override Collider2D[] RaycastArea()
     {
-        return Physics2D.OverlapCircleAll(transform.position, damageArea.x, WhatIsDestroyableBrick);
+        return Physics2D.OverlapCircleAll(transform.position, damageArea.x, whatIsTarget);
     }
 
 #if UNITY_EDITOR

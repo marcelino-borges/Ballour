@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.23488928, g: 0.23584908, b: 0.17466182, a: 1}
+  m_Color: {r: 0.3882353, g: 0.23584908, b: 0.10980392, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.38679248, g: 0.23529412, b: 0.10980392, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -417,7 +417,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.3882353, g: 0.23529412, b: 0.10980392, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.23488928, g: 0.23584908, b: 0.17466182, a: 1}
+  m_Color: {r: 0.3882353, g: 0.23584908, b: 0.10980392, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -638,14 +638,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9056604, g: 0.089711644, b: 0.089711644, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: c8ea3bc689230ac4bb7eabd35f93378c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -674,6 +674,9 @@ MonoBehaviour:
   - {fileID: 8257610494043915634}
   button: {fileID: 0}
   padlockImage: {fileID: 4485208289224268585}
+  cookieNew: {fileID: 21300000, guid: c8ea3bc689230ac4bb7eabd35f93378c, type: 3}
+  cookieBite: {fileID: 21300000, guid: a21166c3753b45448831c8c478b76fe7, type: 3}
+  image: {fileID: 7501206749310847301}
 --- !u!114 &82986682921009332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,7 +909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.23488928, g: 0.23584908, b: 0.17466182, a: 1}
+  m_Color: {r: 0.3882353, g: 0.23584908, b: 0.10980392, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
