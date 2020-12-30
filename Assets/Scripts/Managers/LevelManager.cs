@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
     public float delayToShowUI = .5f;
     public int starsWonInLevel = 0;
     public GameObject tipCanvas;
+    public float delayToShowGameOver = .5f;
 
     private void Awake()
     {
@@ -46,7 +47,7 @@ public class LevelManager : MonoBehaviour
     {
         player.FreezePlayer();
         isGameOver = true;
-        yield return new WaitForSeconds(delayToShowUI);
+        yield return new WaitForSeconds(delayToShowGameOver);
         ShowUI(gameOverPanel);
     }
 

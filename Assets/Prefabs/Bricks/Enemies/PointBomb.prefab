@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4733861564514218345}
   - component: {fileID: 2607450047276169705}
   - component: {fileID: 2083887154049821534}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PointBomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,21 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da51269dda1fcc44e98fa22f5beb8630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startColor: {r: 0.8980393, g: 0.1137255, b: 0.1137255, a: 1}
-  currentColor: {r: 0.8980393, g: 0.1137255, b: 0.1137255, a: 1}
+  startColor: {r: 1, g: 1, b: 1, a: 1}
+  currentColor: {r: 1, g: 1, b: 1, a: 1}
   renderer: {fileID: 2607450047276169705}
-  touchSfx: {fileID: 8300000, guid: 543e20e1465021e4cb108b0eb449b546, type: 3}
-  destroySfx: {fileID: 8300000, guid: 969099a603d13084aa1726aa45670449, type: 3}
+  touchSfx: {fileID: 8300000, guid: 2806d21dcbb090d4d8ba3d0074609f80, type: 3}
+  destroySfx: {fileID: 8300000, guid: 2806d21dcbb090d4d8ba3d0074609f80, type: 3}
   isRandomColor: 0
-  explosionParticlesPrefab: {fileID: 9186946151706584043, guid: 4bec4efea7b7ab94781fd305e87bc7cd,
+  explosionParticlesPrefab: {fileID: 9186946151706584043, guid: 396d152ee191fe94e8321d9c1b3ce914,
     type: 3}
   canDamage: 1
   damage: 1
   shakePreset: {fileID: 11400000, guid: b6c564645c0eebb45a5e0ab942f12a28, type: 2}
   damageArea: {x: 0, y: 0}
-  whatIsDestroyableBrick:
+  whatIsTarget:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
+  destroyOtherBombs: 0
+  destroyBricks: 1
 --- !u!212 &2607450047276169705
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -99,8 +101,8 @@ SpriteRenderer:
   m_SortingLayerID: 1086136297
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e74a62345a16bbc4a8fda1d7ce0f0489, type: 3}
-  m_Color: {r: 0.8962264, g: 0.114142045, b: 0.114142045, a: 1}
+  m_Sprite: {fileID: 21300000, guid: e91a1d650d1b3734182bb87894169ee2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

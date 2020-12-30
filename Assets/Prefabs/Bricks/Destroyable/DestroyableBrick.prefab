@@ -45,17 +45,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6203f0e3dd4610947b244df573758606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startColor: {r: 0.19215688, g: 0.8078432, b: 0.83921576, a: 1}
-  currentColor: {r: 0.19215688, g: 0.8078432, b: 0.83921576, a: 1}
+  startColor: {r: 1, g: 1, b: 1, a: 1}
+  currentColor: {r: 1, g: 1, b: 1, a: 1}
   renderer: {fileID: 8971998165962505923}
-  touchSfx: {fileID: 8300000, guid: 543e20e1465021e4cb108b0eb449b546, type: 3}
-  destroySfx: {fileID: 8300000, guid: 543e20e1465021e4cb108b0eb449b546, type: 3}
+  touchSfx: {fileID: 8300000, guid: f372a439529ca6c4ea7bebf193d1d62e, type: 3}
+  destroySfx: {fileID: 8300000, guid: f372a439529ca6c4ea7bebf193d1d62e, type: 3}
   isRandomColor: 0
   explosionParticlesPrefab: {fileID: 9186946151706584043, guid: 4bec4efea7b7ab94781fd305e87bc7cd,
     type: 3}
   score: 1
   hitPoints: 1
   shakePreset: {fileID: 11400000, guid: b9078288329f1ed45adf85770a55eb0c, type: 2}
+  isDestroyed: 0
 --- !u!212 &8971998165962505923
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -95,8 +96,8 @@ SpriteRenderer:
   m_SortingLayerID: 1086136297
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e74a62345a16bbc4a8fda1d7ce0f0489, type: 3}
-  m_Color: {r: 0.19406372, g: 0.8067278, b: 0.8396226, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c8ea3bc689230ac4bb7eabd35f93378c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -130,5 +131,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.82, y: 0.82}
+  m_EdgeRadius: 0.09
