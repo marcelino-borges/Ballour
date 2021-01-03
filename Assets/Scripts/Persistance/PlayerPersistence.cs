@@ -170,15 +170,6 @@ public class PlayerPersistence : MonoBehaviour
             SavePlayerData(playerData, true);
         }
     }
-
-    public static void SetGodMode(bool isGodMode)
-    {
-        if (HasFileCreated())
-        {
-            PlayerPersistenceData playerData = LoadPlayerData();
-            SavePlayerData(playerData);
-        }
-    }
 }
 
 [Serializable]
@@ -239,7 +230,7 @@ public class PlayerOptionsConfig
 {
     [SerializeField]
     public Language language;
-    public float sfxVolume, musicVolume;
+    public bool sfxOn, musicOn;
 
     public PlayerOptionsConfig()
     {

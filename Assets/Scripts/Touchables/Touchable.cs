@@ -6,14 +6,14 @@ public abstract class Touchable : MonoBehaviour
 {
     public Color startColor;
     public Color currentColor;
-    public SpriteRenderer renderer;
+    public SpriteRenderer spriteRenderer;
     public AudioClip touchSfx;
     public AudioClip destroySfx;
     public bool isRandomColor;
 
     protected virtual void Awake()
     {
-        renderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     protected virtual void Start()
@@ -38,6 +38,6 @@ public abstract class Touchable : MonoBehaviour
     public virtual void SetColor(Color color)
     {
         currentColor = color;
-        renderer.color = color;
+        spriteRenderer.color = color;
     }
 }

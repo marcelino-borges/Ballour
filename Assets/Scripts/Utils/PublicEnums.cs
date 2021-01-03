@@ -13,7 +13,9 @@ public enum Language
     Korean,
     Italian,
     Russian,
-    Thai
+    Thai,
+    French,
+    Deutsch
 }
 
 public static class EnumUtil

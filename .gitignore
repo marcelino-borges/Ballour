@@ -132,3 +132,9 @@ crashlytics-build.properties
 
 # Archive with files interesting to the project
 /[Aa]rchives/
+
+# Android Studio Project used to simulate the mobile gamein other devices
+/ProjectAndroidStudio/
+
+#Keystore - PlayStore
+*.keystore

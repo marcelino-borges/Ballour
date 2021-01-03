@@ -25,6 +25,10 @@ public class UnityAds : MonoBehaviour, IUnityAdsListener
     public bool isTest = false;
 #endif
 
+    public bool canShowAd = true;
+
+    public float adsCooldownInMinutes = 1f;
+
     private void Start()
     {
         if (instance == null)
@@ -49,11 +53,22 @@ public class UnityAds : MonoBehaviour, IUnityAdsListener
 
     private IEnumerator ShowAd(string placement)
     {
-        if (!Advertisement.IsReady(placement))
+        if (canShowAd)
         {
-            yield return new WaitForSeconds(.5f);
+            if (!Advertisement.IsReady(placement))
+            {
+                yield return new WaitForSeconds(.5f);                
+            }
+            Advertisement.Show(placement);
+            StartCoroutine(CountShowAdCooldown());
         }
-        Advertisement.Show(placement);
+    }
+
+    private IEnumerator CountShowAdCooldown()
+    {
+        canShowAd = false;
+        yield return new WaitForSeconds(adsCooldownInMinutes * 60);
+        canShowAd = true;
     }
 
     public void ShowVideo()

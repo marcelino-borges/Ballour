@@ -14,6 +14,8 @@ public class LocalisationSystem : MonoBehaviour {
     private static Dictionary<string, string> localisedIT;
     private static Dictionary<string, string> localisedRU;
     private static Dictionary<string, string> localisedTH;
+    private static Dictionary<string, string> localisedFR;
+    private static Dictionary<string, string> localisedDE;
 
     public static bool isInit;
 
@@ -39,6 +41,8 @@ public class LocalisationSystem : MonoBehaviour {
         localisedIT = csvLoader.GetDictionaryValues("it");
         localisedRU = csvLoader.GetDictionaryValues("ru");
         localisedTH = csvLoader.GetDictionaryValues("th");
+        localisedFR = csvLoader.GetDictionaryValues("fr");
+        localisedDE = csvLoader.GetDictionaryValues("de");
     }
 
     public static Dictionary<string, string> GetDictionaryForEditor() {
@@ -78,6 +82,12 @@ public class LocalisationSystem : MonoBehaviour {
                 break;
             case Language.Thai:
                 localisedTH.TryGetValue(key, out value);
+                break;
+            case Language.French:
+                localisedFR.TryGetValue(key, out value);
+                break;
+            case Language.Deutsch:
+                localisedDE.TryGetValue(key, out value);
                 break;
         }
 
