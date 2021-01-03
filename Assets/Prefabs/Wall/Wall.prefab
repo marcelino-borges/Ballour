@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247595692649273106}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -4.14, z: 8.3}
-  m_LocalScale: {x: 3.2902825, y: 10.285527, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &247595692649273134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,10 +47,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 1, g: 1, b: 1, a: 1}
   currentColor: {r: 1, g: 1, b: 1, a: 1}
-  renderer: {fileID: 247595692649273104}
+  spriteRenderer: {fileID: 0}
   touchSfx: {fileID: 8300000, guid: 508f215199ec7804491a9fde3dd35049, type: 3}
   destroySfx: {fileID: 0}
   isRandomColor: 0
+  position: 0
+  bordersMargin: 0.1
 --- !u!212 &247595692649273104
 SpriteRenderer:
   m_ObjectHideFlags: 0

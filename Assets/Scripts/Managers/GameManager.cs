@@ -43,8 +43,8 @@ public class GameManager : MonoBehaviour
 
         if (playerConfigs != null)
         {
-            MusicManager.instance.CurrentVolume = playerConfigs.musicVolume;
-            SoundManager.instance.CurrentVolume = playerConfigs.sfxVolume;
+            MusicManager.instance.Mute(!playerConfigs.musicOn);
+            SoundManager.instance.Mute(!playerConfigs.sfxOn);
 
             Language savedLanguage = PlayerPersistence.GetPlayerLanguage();
 
@@ -61,8 +61,8 @@ public class GameManager : MonoBehaviour
         PlayerPersistenceData playerData = PlayerPersistence.LoadPlayerData();
         PlayerOptionsConfig playerOptions = playerData.playerOptionsConfig;
 
-        playerOptions.musicVolume = MusicManager.instance.CurrentVolume;
-        playerOptions.sfxVolume = SoundManager.instance.CurrentVolume;
+        playerOptions.musicOn = !MusicManager.instance.isMuted;
+        playerOptions.sfxOn = !SoundManager.instance.isMuted;
 
         playerData.playerOptionsConfig = playerOptions;
 

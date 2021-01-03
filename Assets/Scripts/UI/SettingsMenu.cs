@@ -25,6 +25,9 @@ public class SettingsMenu : MonoBehaviour
         languageDropdown.value = languages.IndexOf(LocalisationSystem.language.ToString());
         languageDropdown.RefreshShownValue();
 
+        musicToggle.isOn = playerConfigs.musicOn;
+        sfxToggle.isOn = playerConfigs.sfxOn;
+
         if(musicToggle != null)
             musicToggle.onValueChanged.AddListener(value => MuteMusic(value));
         if (sfxToggle != null)
@@ -48,8 +51,7 @@ public class SettingsMenu : MonoBehaviour
     public void LoadMainMenu()
     {
         CommonUI.PlayButtonClickSfx();
-        CommonUI.LoadMainMenu();
-        
+        CommonUI.LoadMainMenu();        
     }
 
     public void CloseSettings()
@@ -58,15 +60,17 @@ public class SettingsMenu : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void MuteMusic(bool mute)
+    public void MuteMusic(bool isOn)
     {
         CommonUI.PlayButtonClickSfx();
-        MusicManager.instance.Mute(!mute);
+        MusicManager.instance.Mute(!isOn);
+        playerConfigs.musicOn = isOn;
     }
 
-    public void MuteSfx(bool mute)
+    public void MuteSfx(bool isOn)
     {
         CommonUI.PlayButtonClickSfx();
-        SoundManager.instance.Mute(!mute);
+        SoundManager.instance.Mute(!isOn);
+        playerConfigs.sfxOn = isOn;
     }
 }

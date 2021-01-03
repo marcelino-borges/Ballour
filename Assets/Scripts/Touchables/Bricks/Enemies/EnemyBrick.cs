@@ -20,6 +20,8 @@ public class EnemyBrick : Brick
 
     public ShakePreset shakePreset;
 
+    public static bool isVibrating = false;
+
     protected override void Awake()
     {
         base.Awake();
@@ -45,7 +47,7 @@ public class EnemyBrick : Brick
 
     public override void DestroyObject()
     {
-        Handheld.Vibrate();
+        Vibrate();
         Shaker.ShakeAll(shakePreset);
 
         if (explosionParticlesPrefab != null)
@@ -60,6 +62,18 @@ public class EnemyBrick : Brick
             SoundManager.instance.PlaySound2D(destroySfx);
 
         Destroy(gameObject);
+    }
+
+    private IEnumerator Vibrate()
+    {
+        if (!isVibrating)
+        {
+            Handheld.Vibrate();
+            isVibrating = true;
+            yield return new WaitForSeconds(.25f);
+            isVibrating = false;
+        }
+
     }
 
     public override void OnTouchPlayer(PlayerBall player)
