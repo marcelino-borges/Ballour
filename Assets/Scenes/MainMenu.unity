@@ -2219,3 +2219,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5196071351673498240}
   m_CullTransparentMesh: 0
+--- !u!1001 &5249900962522924664
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 452887481890661278, guid: b526e0b9c22b94c4993f10c085af0bd8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.16369072
+      objectReference: {fileID: 0}
+    - target: {fileID: 452887481890661278, guid: b526e0b9c22b94c4993f10c085af0bd8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.71573573
+      objectReference: {fileID: 0}
+    - target: {fileID: 452887481890661278, guid: b526e0b9c22b94c4993f10c085af0bd8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 18.803335
+      objectReference: {fileID: 0}
+    - target: {fileID: 452887481890661278, guid: b526e0b9c22b94c4993f10c085af0bd8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452887481890661278, guid: b526e0b9c22b94c4993f10c085af0bd8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452887481890661278, guid: b526e0b9c22b94c4993f10c085af0bd8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452887481890661278, guid: b526e0b9c22b94c4993f10c085af0bd8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 452887481890661278, guid: b526e0b9c22b94c4993f10c085af0bd8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 452887481890661278, guid: b526e0b9c22b94c4993f10c085af0bd8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452887481890661278, guid: b526e0b9c22b94c4993f10c085af0bd8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452887481890661278, guid: b526e0b9c22b94c4993f10c085af0bd8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329257147422595071, guid: b526e0b9c22b94c4993f10c085af0bd8,
+        type: 3}
+      propertyPath: m_Name
+      value: FacebookAnalytics
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b526e0b9c22b94c4993f10c085af0bd8, type: 3}

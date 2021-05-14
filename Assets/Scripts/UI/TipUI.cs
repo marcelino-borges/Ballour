@@ -11,6 +11,7 @@ public class TipUI : MonoBehaviour
 
     public void CloseTip()
     {
+        FacebookAnalytics.instance.LogTutorialCompleteEvent();
         gameObject.SetActive(false);
     }
 

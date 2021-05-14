@@ -17,6 +17,7 @@ public class CommonUI : MonoBehaviour
 
     public static void ReloadLevel()
     {
+        FacebookAnalytics.instance.LogLevelRestartEvent();
         SoundManager.instance.PlayButtonSfx();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

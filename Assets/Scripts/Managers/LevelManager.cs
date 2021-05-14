@@ -30,16 +30,19 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        if (tipCanvas != null) 
+        if (tipCanvas != null)
             tipCanvas.SetActive(true);
 
         initialObjectivesInLevel = GameObject.FindObjectsOfType<DestroyableBrick>().Length;
         totalObjectivesToDestroyInLevel = initialObjectivesInLevel;
         collectablesInLevel = GameObject.FindGameObjectsWithTag("Collectable").Length;
+
+        FacebookAnalytics.instance.LogLevelStartedEvent();
     }
 
     public void SetGameOver()
     {
+        FacebookAnalytics.instance.LogLevelFailedEvent();
         StartCoroutine(SetGameOverCo());
     }
 
@@ -53,6 +56,7 @@ public class LevelManager : MonoBehaviour
 
     public void SetVictory()
     {
+        FacebookAnalytics.instance.LogLevelCompleteEvent();
         starsWonInLevel = CalculateStarsWon(objectivesDestroyed, initialObjectivesInLevel);
         StartCoroutine(SetVictoryCo());
     }

@@ -23,6 +23,8 @@ public class VictoryMenu : MonoBehaviour
     {
         int stars = LevelManager.instance.starsWonInLevel;
 
+        if(stars == 3) FacebookAnalytics.instance.LogHighScoreAchievedEvent();
+
         for (int i = 0; i < stars; i++)
         {
             yield return new WaitForSeconds(delayBetweenEachStarActivation);
