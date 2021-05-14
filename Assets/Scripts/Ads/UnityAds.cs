@@ -8,7 +8,7 @@ public class UnityAds : MonoBehaviour, IUnityAdsListener
 
 #if UNITY_IOS
     private const string gameId = "3950914";
-#elif UNITY_ANDROID
+#elif UNITY_ANDROID || UNITY_EDITOR
     private const string gameId = "3950915";
 #endif
 
