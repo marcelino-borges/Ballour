@@ -42,7 +42,6 @@ public class LevelManager : MonoBehaviour
 
     public void SetGameOver()
     {
-        FacebookAnalytics.instance.LogLevelFailedEvent();
         StartCoroutine(SetGameOverCo());
     }
 
@@ -51,12 +50,12 @@ public class LevelManager : MonoBehaviour
         player.FreezePlayer();
         isGameOver = true;
         yield return new WaitForSeconds(delayToShowGameOver);
-        ShowUI(gameOverPanel);
+        ShowUI(gameOverPanel); 
+        FacebookAnalytics.instance.LogLevelFailedEvent();
     }
 
     public void SetVictory()
     {
-        FacebookAnalytics.instance.LogLevelCompleteEvent();
         starsWonInLevel = CalculateStarsWon(objectivesDestroyed, initialObjectivesInLevel);
         StartCoroutine(SetVictoryCo());
     }
@@ -80,6 +79,7 @@ public class LevelManager : MonoBehaviour
         ShowUI(victoryMenu.gameObject);
         victoryMenu.SetStarsFromLevel();
         SaveLevelData();
+        FacebookAnalytics.instance.LogLevelCompleteEvent();
     }
 
     private void ShowUI(GameObject ui)

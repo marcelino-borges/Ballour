@@ -23,7 +23,8 @@ public class VictoryMenu : MonoBehaviour
     {
         int stars = LevelManager.instance.starsWonInLevel;
 
-        if(stars == 3) FacebookAnalytics.instance.LogHighScoreAchievedEvent();
+        if(stars == 3 && FacebookAnalytics.instance.IsInitialized())
+            FacebookAnalytics.instance.LogHighScoreAchievedEvent();
 
         for (int i = 0; i < stars; i++)
         {
