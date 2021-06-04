@@ -1,0 +1,412 @@
+fileFormatVersion: 2
+guid: 4497eb663dcb8414191f831b5418db55
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Star
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4915
+      y: 4
+      width: 1186
+      height: 1102
+    spriteID: 6c0d07a4617fe5242b94cf7e2f023111
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3442, y: -5129}
+  - name: Biscuit_Round_Clean
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3731
+      y: 4
+      width: 1176
+      height: 1213
+    spriteID: eabc775402f27f244b2c86539ef2ddd3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1473, y: -5903}
+  - name: Camada 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4554
+      y: 5171
+      width: 0
+      height: 0
+    spriteID: 4d45a1c671854994199248ecfe94814d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 835, y: -2099}
+  - name: Biscuit_Diamond_Jelly
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3731
+      y: 1225
+      width: 1048
+      height: 1041
+    spriteID: 511ec671571324d41aca2da10838d431
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1189, y: -2556}
+  - name: Biscuit_Square_Jelly
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3731
+      y: 5171
+      width: 815
+      height: 784
+    spriteID: e36d3ea88acfe8d428f569ab41984dc8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3045, y: 1390}
+  - name: Biscuit_Diamond_Jelly_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3731
+      y: 2274
+      width: 1048
+      height: 1041
+    spriteID: cf233817b7d81c34c83aab935439b3b3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3278, y: 381}
+  - name: Biscuit_Round_Jelly
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3731
+      y: 3323
+      width: 888
+      height: 916
+    spriteID: 6fd95cdbf72f387489961c93ff889b9b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2147, y: -458}
+  - name: Biscuit_Round_Clean_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3731
+      y: 4247
+      width: 888
+      height: 916
+    spriteID: be9926a628857c5429022c6b236fc1f7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3153, y: -1809}
+  - name: Biscuit_Square_Clean
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3731
+      y: 5963
+      width: 815
+      height: 784
+    spriteID: 4653ebc5e099ad24bb586da0b1f43ec2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3080, y: 1317}
+  - name: BG_Red
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 1, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 11
+      width: 3719
+      height: 7257
+    spriteID: a7afae15606cff54ab5b4905ea98067d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  platformSettings: []
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 2048
+  importedTextureHeight: 2048
+  documentSize: {x: 3719, y: 7270}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 8192
+  textureActualHeight: 8192
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Star
+    spriteName: Star
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 6c0d07a4617fe5242b94cf7e2f023111
+    layerID: 295
+    mosaicPosition: {x: 4915, y: 4}
+  - name: Biscuit_Round_Clean
+    spriteName: Biscuit_Round_Clean
+    isGroup: 0
+    parentIndex: -1
+    spriteID: eabc775402f27f244b2c86539ef2ddd3
+    layerID: 294
+    mosaicPosition: {x: 3731, y: 4}
+  - name: Camada 7
+    spriteName: Camada 7
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 4d45a1c671854994199248ecfe94814d
+    layerID: 253
+    mosaicPosition: {x: 4554, y: 5171}
+  - name: Biscuit_Diamond_Jelly
+    spriteName: Biscuit_Diamond_Jelly
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 511ec671571324d41aca2da10838d431
+    layerID: 266
+    mosaicPosition: {x: 3731, y: 1225}
+  - name: Biscuit_Square_Jelly
+    spriteName: Biscuit_Square_Jelly
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e36d3ea88acfe8d428f569ab41984dc8
+    layerID: 265
+    mosaicPosition: {x: 3731, y: 5171}
+  - name: Biscuit_Diamond_Jelly
+    spriteName: Biscuit_Diamond_Jelly_1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: cf233817b7d81c34c83aab935439b3b3
+    layerID: 260
+    mosaicPosition: {x: 3731, y: 2274}
+  - name: Biscuit_Round_Jelly
+    spriteName: Biscuit_Round_Jelly
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 6fd95cdbf72f387489961c93ff889b9b
+    layerID: 271
+    mosaicPosition: {x: 3731, y: 3323}
+  - name: Biscuit_Round_Clean
+    spriteName: Biscuit_Round_Clean_1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: be9926a628857c5429022c6b236fc1f7
+    layerID: 269
+    mosaicPosition: {x: 3731, y: 4247}
+  - name: Biscuit_Square_Clean
+    spriteName: Biscuit_Square_Clean
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 4653ebc5e099ad24bb586da0b1f43ec2
+    layerID: 257
+    mosaicPosition: {x: 3731, y: 5963}
+  - name: BG_Red
+    spriteName: BG_Red
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a7afae15606cff54ab5b4905ea98067d
+    layerID: 298
+    mosaicPosition: {x: 4, y: 4}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: Elements Texture
+  prefabAssetName: Elements Prefab
+  spriteLibAssetName: Elements Sprite Lib
+  secondarySpriteTextures: []

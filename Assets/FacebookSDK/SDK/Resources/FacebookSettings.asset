@@ -24,7 +24,7 @@ MonoBehaviour:
   status: 1
   xfbml: 0
   frictionlessRequests: 1
-  androidKeystorePath: E:\Meus_Projetos_Unity\Ballour\upload.keystore
+  androidKeystorePath: E:\Meus_Projetos_Unity\Ballour-bkp_19-05-2021\upload.keystore
   iosURLSuffix: 
   appLinkSchemes:
   - list: []
